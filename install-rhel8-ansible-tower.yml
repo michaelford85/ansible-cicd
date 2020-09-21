@@ -1,0 +1,22 @@
+---
+- name: Update yum packages on Linux
+  hosts: linux
+  gather_facts: yes
+
+  tasks:
+
+    - name: upgrade all packages
+      yum:
+        name: '*'
+        state: latest
+      become: yes
+
+    - name: install packages
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - wget
+        - tar
+        - python3-pip
+      become: yes
