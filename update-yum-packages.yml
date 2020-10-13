@@ -1,6 +1,6 @@
 ---
 - name: Update yum packages on Linux
-  hosts: linux
+  hosts: all
   gather_facts: yes
 
   tasks:
@@ -10,6 +10,7 @@
         name: '*'
         state: latest
       become: yes
+      when: tags.demo == "cicd"
 
     - name: install packages
       yum:
@@ -20,3 +21,4 @@
         - tar
         - python3-pip
       become: yes
+      when: tags.demo == "cicd"
