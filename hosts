@@ -7,9 +7,9 @@ jenkins.mford.io
 
 
 [linux]
-18.235.249.122
-52.91.137.26
-18.215.160.98
+3.20.223.110
+3.16.158.70
+3.19.31.29
 
 ;[linux:vars]
 ;ansible_user=ec2-user
