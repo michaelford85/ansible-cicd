@@ -15,11 +15,13 @@
     - name: install packages
       yum:
         name: "{{ packages }}"
+        state: present
       vars:
         packages:
         - wget
         - tar
         - python3-pip
+        - nginx
+        - postgresql
       become: yes
       when: tags.demo == "cicd"
-      
