@@ -15,7 +15,7 @@
     - name: install packages
       yum:
         name: "{{ packages }}"
-        state: present
+        state: absent
       vars:
         packages:
         - wget
